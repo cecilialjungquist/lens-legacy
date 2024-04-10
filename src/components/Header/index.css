@@ -23,7 +23,8 @@
 }
 
 .main-header__nav--mobile {
-    position: absolute;
+    position: fixed;
+    z-index: 100;
     border-top: 1px solid white;
     background-color: var(--bg-color);
     height: 4rem;

@@ -1,0 +1,25 @@
+.shop h1 {
+    text-align: center;
+    margin: 2rem;
+}
+
+.shop__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.shop__cards .card {
+    width: 250px;
+    height: 350px;
+    border: 1px solid white;
+}
+.shop__cards figure {
+    height: 60%
+    
+}
+.shop__cards img {
+    height: 100%;
+    object-fit: cover;
+}

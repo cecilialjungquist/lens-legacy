@@ -1,0 +1,43 @@
+.home__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    min-height: 60vh;
+}
+.home__heading h1 {
+    font-size: 4.25rem;
+    text-align: center;
+}
+
+.home__slideshow {
+    max-width: var(--narrow-width);
+    margin: auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+.home__slideshow figure img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.home__slideshow figure {
+    transition: border-radius .3s, transform .3s;
+}
+
+.home__slideshow figure:hover {
+    border-radius: 1rem;
+    overflow: hidden;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 48rem) {
+
+    /* .home__slideshow {
+        grid-template-columns: 1fr;
+    } */
+
+}
