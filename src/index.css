@@ -1,0 +1,61 @@
+@import './fonts.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --bg-color: #211b29;
+    --fg-color--light: #3E3546;
+    --fg-color--dark: #39333E;
+
+    --font-color: #b2b2b2;
+
+    --max-width: 1440px;
+    --wide-width: 1280px;
+    --narrow-width: 954px;
+
+    --font-title: 'Comfortaa', sans-serif;
+    --font-main: 'Open Sans', sans-serif;
+
+    --breakpoint: 48rem;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: var(--font-main);
+}
+
+#root {
+    max-width: var(--wide-width);
+    margin: auto;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    color: white;
+}
+
+p {
+    line-height: 140%;
+}
+
+a {
+    color: var(--font-color);
+    transition: color .3s, text-decoration .3s;
+}
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+img {
+    width: 100%;
+}
