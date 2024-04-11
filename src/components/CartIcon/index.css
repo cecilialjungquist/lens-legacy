@@ -1,0 +1,10 @@
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon__indicator p {
+    color: white;
+    line-height: 0;
+    position: absolute;
+    right: 1rem;
+}
