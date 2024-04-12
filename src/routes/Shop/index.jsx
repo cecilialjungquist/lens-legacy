@@ -78,7 +78,7 @@ function getProducts() {
             title: "Img 103",
             price: 129,
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            imgUrl: "public/hiroyuki-sen-H8qB5Hy-gbo-unsplash.jpg",
+            imgUrl: "hiroyuki-sen-H8qB5Hy-gbo-unsplash.jpg",
             author: "https://unsplash.com/photos/a-very-tall-building-with-lots-of-windows-H8qB5Hy-gbo"
         },
         {

@@ -4,11 +4,25 @@ import './index.css';
 function CartIcon() {
     const orders = useSelector(state => state.order);
 
+    function itemsInCart() {
+        if (!orders) {
+            return;
+        }
+
+       let items = 0;
+
+       orders.map(order => {
+        items += order.qty
+       })
+
+       return items;
+    }
+
     return (
         <div className="cart-icon">
             {
                 orders && orders.length > 0 &&
-                <div className="cart-icon__indicator"><p>{orders.length}</p></div>
+                <div className="cart-icon__indicator"><p>{itemsInCart()}</p></div>
             }
             <svg width="40" height="40" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.1875 32.5C13.5337 32.5 14.625 31.4087 14.625 30.0625C14.625 28.7163 13.5337 27.625 12.1875 27.625C10.8413 27.625 9.75 28.7163 9.75 30.0625C9.75 31.4087 10.8413 32.5 12.1875 32.5Z" fill="white" />

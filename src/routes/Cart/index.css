@@ -44,6 +44,20 @@
     margin-bottom: .8rem;
 }
 
+.cart__list svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    opacity: .8;
+}
+.cart__list button:hover svg {
+    opacity: 1;
+}
+
+.cart__item-qty {
+    display: flex;
+    gap: .5rem;
+}
+
 .cart__total {
     display: flex;
     justify-content: space-between;
