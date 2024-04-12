@@ -5,7 +5,16 @@ import { Link } from 'react-router-dom';
 
 function Cart() {
     const order = useSelector(state => state.order);
-    console.log(order);
+
+
+    function calcTotalPrice(orderToCalc) {
+        let totalPrice = 0;
+        orderToCalc.forEach(item => {
+            totalPrice += item.price * item.qty;
+        });
+        return totalPrice;
+    }
+
 
     return (
         <div className="cart">
@@ -13,26 +22,34 @@ function Cart() {
             <div className="cart__flex">
                 <section className="cart__flex-col cart__items">
                     <h2>Your Items</h2>
-                    <ul>
-                        {
-                            order && order.length > 0 ? order.map(item => {
-                                return (
-                                    <li key={item.id}><span>{item.title}</span> <span>{item.price}sek</span></li>
-                                );
-                            }) : (
-                                <>
-                                    <p className='cart__p--empty'>Your cart is empty.</p>
-                                    <Link to={'/shop'} className='button'>Start shopping</Link>
-                                </>
-                            )
-                        }
-                    </ul>
+                    {order && order.length > 0 ? (
+                        <>
+                            <ul className='cart__list'>
+                                {order.map(item => (
+                                    <li key={item.id}>
+                                        <span>{item.title}</span>
+                                        <span>{item.qty}</span>
+                                        <span>{item.price}sek</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <section className='cart__total'>
+                                <h3>Total price</h3>
+                                <p>{calcTotalPrice(order)}sek</p>
+                            </section>
+                        </>
+                    ) : (
+                        <>
+                            <p className='cart__p--empty'>Your cart is empty.</p>
+                            <Link to={'/shop'} className='button'>Start shopping</Link>
+                        </>
+                    )}
                 </section>
                 {
                     order && order.length > 0 &&
                     <section className="cart__flex-col cart__details">
                         <h2>Your Details</h2>
-                            <CheckoutForm  />
+                        <CheckoutForm />
                     </section>
                 }
             </div>

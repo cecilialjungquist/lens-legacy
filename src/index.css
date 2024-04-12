@@ -69,7 +69,8 @@ input {
 }
 label {
     font-size: 0.875rem;
-    margin-bottom: .5rem;
+    display: block;
+    padding-bottom: .5rem;
 }
 
 button {

@@ -9,3 +9,18 @@
     display: flex;
     justify-content: flex-end;
 }
+
+@media screen and (max-width: 59.625rem) {
+
+    .form form  {
+        justify-content: flex-start;
+    }
+
+    .form__group {
+        width: 100%;
+    }
+    .form__group input {
+        width: 100%;
+    }
+
+}
