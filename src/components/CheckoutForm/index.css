@@ -1,0 +1,11 @@
+.form form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form__group--btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -3,7 +3,6 @@ import './index.css';
 
 function CartIcon() {
     const orders = useSelector(state => state.order);
-    console.log(orders)
 
     return (
         <div className="cart-icon">

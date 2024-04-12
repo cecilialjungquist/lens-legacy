@@ -8,17 +8,34 @@
 .cart h1 {
     margin-top: 3rem;
 }
-
+.cart h2 {
+    margin-bottom: 1.5rem;
+}
+.cart__p--empty {
+    margin-bottom: 2rem;
+}
 .cart__flex {
     display: flex;
     background-color: var(--fg-color--dark);
     min-width: var(--narrow-width);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
+    max-width: var(--wide-width);
+    margin: 1rem ;
 }
 
 .cart__flex-col {
     flex: 1;
+}
+
+@media screen and (max-width: 59.625rem) {
+
+    .cart__flex {
+        flex-direction: column;
+        min-width: none;
+        /* FIX THIS */
+    }
+
 }
