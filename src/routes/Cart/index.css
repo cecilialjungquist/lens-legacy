@@ -27,21 +27,25 @@
     display: flex;
     max-width: var(--wide-width);
     margin: 1rem;
-    gap: 1rem
+    gap: 8rem
 }
 
 .cart__flex-col {
     flex: 1;
 }
 
-.cart__items > * {
+/* .cart__items > * {
     max-width: 28rem;
-}
+} */
 
 .cart__list li {
     display: flex;
     justify-content: space-between;
     margin-bottom: .8rem;
+    transition: color .3s;
+}
+.cart__list li:hover {
+    color: white;
 }
 
 .cart__list svg {
@@ -64,6 +68,7 @@
     border-top: 1px solid var(--font-color);
     margin-top: 1rem;
     padding-top: 1rem;
+    color: white
 }
 
 @media screen and (max-width: 59.625rem) {

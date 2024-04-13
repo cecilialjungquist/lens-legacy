@@ -2,17 +2,22 @@ import { useDispatch } from 'react-redux';
 import useIsDesktop from '../../hooks/useIsDesktop';
 import './index.css';
 import { addItem } from '../../store/orderSlice';
+import { useState } from 'react';
 
 function Modal({ product, setActiveCardId }) {
-    const { title, price, desc, imgUrl } = product;
+    const { title, price, desc, imgUrl, sizes } = product;
     const isDesktop = useIsDesktop();
     const dispatch = useDispatch();
+    const [selectedSize, setSelectedSize] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     function handleAddToCart() {
-        dispatch(addItem(product));
-        setActiveCardId(null)
+        if (selectedSize) {
+            const productWithSize = { ...product, selectedSize };
+            dispatch(addItem(productWithSize));
+            setActiveCardId(null);
+        }
     }
-
 
     return (
         <div className="modal__backdrop">
@@ -32,6 +37,12 @@ function Modal({ product, setActiveCardId }) {
                     <div>
                         <h2>{title}</h2>
                         <p>{price}sek</p>
+                        <select value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
+                            <option value="">Select Size</option>
+                            {sizes && sizes.map((size, index) => (
+                                <option key={index} value={size}>{size}</option>
+                            ))}
+                        </select>
                         <p>{desc}</p>
                     </div>
                     <button className='button' onClick={handleAddToCart}>
