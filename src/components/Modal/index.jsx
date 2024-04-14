@@ -5,16 +5,15 @@ import { addItem } from '../../store/orderSlice';
 import { useState } from 'react';
 
 function Modal({ product, setActiveCardId }) {
-    const { title, price, desc, imgUrl, sizes } = product;
+    const { title, desc, imgUrl, types } = product;
     const isDesktop = useIsDesktop();
     const dispatch = useDispatch();
-    const [selectedSize, setSelectedSize] = useState(null);
-    const [errorMessage, setErrorMessage] = useState(null);
+    const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
 
     function handleAddToCart() {
-        if (selectedSize) {
-            const productWithSize = { ...product, selectedSize };
-            dispatch(addItem(productWithSize));
+        if (selectedTypeIndex >= 0 || selectedTypeIndex <= types.length) {
+            const productToAdd = { ...product, ...types[selectedTypeIndex] };
+            dispatch(addItem(productToAdd));
             setActiveCardId(null);
         }
     }
@@ -36,13 +35,20 @@ function Modal({ product, setActiveCardId }) {
                 <div className='modal__info'>
                     <div>
                         <h2>{title}</h2>
-                        <p>{price}sek</p>
-                        <select value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
-                            <option value="">Select Size</option>
-                            {sizes && sizes.map((size, index) => (
-                                <option key={index} value={size}>{size}</option>
-                            ))}
-                        </select>
+                        <p>{types[selectedTypeIndex].price}sek</p>
+                        {types && types.map((type, index) => (
+                            <div key={index}>
+                                <input
+                                    type="radio"
+                                    id={`size-${index}`}
+                                    name="size"
+                                    value={index}
+                                    checked={selectedTypeIndex === index}
+                                    onChange={() => setSelectedTypeIndex(index)}
+                                />
+                                <label htmlFor={`size-${index}`}>{type.size}</label>
+                            </div>
+                        ))}
                         <p>{desc}</p>
                     </div>
                     <button className='button' onClick={handleAddToCart}>

@@ -34,13 +34,11 @@
     flex: 1;
 }
 
-/* .cart__items > * {
-    max-width: 28rem;
-} */
 
 .cart__list li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    /* justify-content: space-between; */
     margin-bottom: .8rem;
     transition: color .3s;
 }
@@ -55,6 +53,9 @@
 }
 .cart__list button:hover svg {
     opacity: 1;
+}
+.cart_item-title {
+    margin-right: 1.5rem;
 }
 
 .cart__item-qty {

@@ -18,11 +18,9 @@ function Cart() {
 
     function changeQty(edit, item) {
         if (edit === 'incr') {
-            console.log('add')
             dispatch(addItem(item));
         }
         if (edit === 'decr') {
-            console.log('remove')
             dispatch(removeItem(item));
         }
     }
@@ -37,9 +35,12 @@ function Cart() {
                     {order && order.length > 0 ? (
                         <>
                             <ul className='cart__list'>
-                                {order.map(item => (
-                                    <li key={item.id}>
-                                        <span>{item.title}</span>
+                                {order.map((item, index) => (
+                                    <li key={index}>
+                                        <div>
+                                            <span className='cart_item-title'>{item.title}</span>
+                                            <span>{item.size}</span>
+                                        </div>
                                         <div className='cart__item-qty'>
                                             <button className='cart__btn--incr' onClick={() => changeQty('decr', item)}>
                                                 <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">

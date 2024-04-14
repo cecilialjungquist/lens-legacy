@@ -1,7 +1,10 @@
 import { useState } from "react";
 import './index.css';
+import { useSelector } from "react-redux";
 
 function CheckoutForm() {
+    const order = useSelector(state => state.order);
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -22,7 +25,8 @@ function CheckoutForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log("Form data submitted: ", formData);
+        console.log("Data sent to server: ", { ...formData, ...order });
+        
     }
 
     return (
