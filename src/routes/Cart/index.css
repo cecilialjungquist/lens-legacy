@@ -34,7 +34,6 @@
     flex: 1;
 }
 
-
 .cart__list li {
     display: grid;
     grid-template-columns: 200px 1fr auto;
@@ -72,12 +71,24 @@
     color: white
 }
 
+.cart__confirm {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.cart__confirm .button {
+    margin-top: 2rem;
+}
+
 @media screen and (max-width: 59.625rem) {
 
     .cart__flex {
         flex-direction: column;
         min-width: auto;
         gap: 3rem;
+    }
+    .cart__confirm {
+        gap: 1rem;
     }
 
 }

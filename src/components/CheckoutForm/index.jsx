@@ -2,7 +2,7 @@ import { useState } from "react";
 import './index.css';
 import { useSelector } from "react-redux";
 
-function CheckoutForm() {
+function CheckoutForm({ onSubmit }) {
     const order = useSelector(state => state.order);
 
     const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ function CheckoutForm() {
     function handleSubmit(e) {
         e.preventDefault();
         console.log("Data sent to server: ", { ...formData, ...order });
-        
+        onSubmit();
     }
 
     return (

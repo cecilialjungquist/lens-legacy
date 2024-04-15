@@ -37,7 +37,7 @@ function Modal({ product, setActiveCardId }) {
                         <h2>{title}</h2>
                         <p>{types[selectedTypeIndex].price}sek</p>
                         {types && types.map((type, index) => (
-                            <div key={index}>
+                            <div key={index} className="modal__sizes">
                                 <input
                                     type="radio"
                                     id={`size-${index}`}
