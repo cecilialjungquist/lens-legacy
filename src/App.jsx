@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,6 +7,7 @@ import { useCookies } from 'react-cookie';
 import { setOrderFromCookie } from './store/orderSlice';
 
 function App() {
+  const { pathname } = useLocation();
   const order = useSelector(state => state.order);
   const dispatch = useDispatch();
   const [cookies, setCookie] = useCookies(['order']);
@@ -23,6 +24,11 @@ function App() {
   useEffect(() => {
     setCookie('order', order, { maxAge: 60 * 60 * 3 });
   }, [order]);
+
+  // Scroll to top
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [pathname])
 
   return (
     <>

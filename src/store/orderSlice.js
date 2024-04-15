@@ -7,7 +7,7 @@ export const orderSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state, action) => {
-            console.log('add item', action.payload)
+            // console.log('add item', action.payload)
             const { id, size } = action.payload;
             const existingItem = state.find(item => item.id === id && item.size === size);
             if (existingItem) {
@@ -17,7 +17,7 @@ export const orderSlice = createSlice({
             }
         },
         removeItem: (state, action) => {
-            console.log('remove item')
+            // console.log('remove item')
             const { id, size } = action.payload;
             const index = state.findIndex(item => item.id === id && item.size === size);
             if (index !== -1) {

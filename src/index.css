@@ -37,11 +37,16 @@ body {
     font-weight: 400;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: var(--font-title);
     font-weight: 600;
     color: white;
 }
+
 h1 {
     font-size: 2rem;
 }
@@ -54,6 +59,7 @@ a {
     color: var(--font-color);
     transition: color .3s, text-decoration .3s;
 }
+
 a:hover {
     text-decoration: underline;
     color: white;
@@ -66,10 +72,11 @@ img {
 input {
     outline: none;
     font-family: var(--font-main);
-    padding: 2px 6px;
+    padding: .5rem 1rem;
     display: block;
     margin-bottom: 1rem;
 }
+
 label {
     font-size: 0.875rem;
     display: block;
@@ -92,8 +99,31 @@ button {
     color: white;
     transition: background-color .3s;
 }
+
 .button:hover {
     background-color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
     text-decoration: none;
+}
+
+/* Routes */
+.cart,
+.home,
+.about,
+.contact,
+.shop {
+    padding-top: 5rem;
+}
+
+@media screen and (max-width: 48rem) {
+
+    /* To make room for mobile nav */
+    .cart,
+    .home,
+    .about,
+    .contact,
+    .shop {
+        padding-top: 8rem;
+    }
+
 }
