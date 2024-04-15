@@ -1,0 +1,33 @@
+.footer {
+    padding: 4rem;
+} 
+
+.footer__flex-container {
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+}
+
+.footer__flex-container figure {
+    max-width: 10rem;
+}
+
+.footer__social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer__social svg path {
+    fill: white;
+}
+
+@media screen and (max-width: 48rem) {
+    .footer {
+        padding-bottom: 8rem;
+    }
+    .footer__flex-container {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+}

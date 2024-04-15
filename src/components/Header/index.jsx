@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './index.css';
 import useIsDesktop from "../../hooks/useIsDesktop";
 import CartIcon from "../CartIcon";
@@ -7,7 +7,6 @@ function Header() {
     const isDesktop = useIsDesktop();
 
     return (
-
         <>
             <header className="main-header">
                 <div className="main-header__logo">
@@ -18,10 +17,10 @@ function Header() {
 
                 <div className={isDesktop ? "main-header__nav" : "main-header__nav--mobile"}>
                     <nav>
-                        <Link to={'/'}>Home</Link>
-                        <Link to={'/shop'}>Shop</Link>
-                        <Link to={'/about'}>About</Link>
-                        <Link to={'/contact'}>Contact</Link>
+                        <NavLink to={'/'} >Home</NavLink>
+                        <NavLink to={'/shop'} >Shop</NavLink>
+                        <NavLink to={'/about'} >About</NavLink>
+                        <NavLink to={'/contact'} >Contact</NavLink>
                     </nav>
                 </div>
 
@@ -33,7 +32,6 @@ function Header() {
             </header >
             <div className="main-header__bottom-divider"></div>
         </>
-
     );
 }
 

@@ -1,5 +1,6 @@
 .home {
     width: 100%;
+    min-height: 100vh;
 }
 
 .home__heading {
@@ -13,4 +14,7 @@
 .home__heading h1 {
     font-size: 4.25rem;
     text-align: center;
+}
+.home__heading .button {
+    margin-top: 3rem;
 }

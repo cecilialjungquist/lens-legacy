@@ -30,6 +30,7 @@ function Cart() {
     }
 
     function mockupApiCallForPlacingOrder() {
+        window.scrollTo(0,0);
         setIsLoading(true);
     
         // Simulate an asynchronous operation (fetching data from an API)

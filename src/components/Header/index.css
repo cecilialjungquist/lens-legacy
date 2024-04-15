@@ -53,6 +53,9 @@
     margin: auto;
 }
 
+.main-header .active {
+    color: white;
+}
 
 
 @media screen and (max-width: 48rem) {
