@@ -32,6 +32,7 @@ body {
 }
 
 #root {
+    background: linear-gradient(45deg, #211b29 40%, #241d33 60%, #211b29);
     max-width: var(--wide-width);
     margin: auto;
     font-weight: 400;

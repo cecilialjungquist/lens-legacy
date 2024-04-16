@@ -1,7 +1,10 @@
 .main-header {
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
+    box-shadow: 0px 6px 10px rgba(33, 27, 41, 0.4);
     position: fixed;
     width: 100%;
+    left: 0;
+    top: 0;
     z-index: 1;
     background: var(--bg-color)
 }
@@ -59,6 +62,7 @@
     width: 40%;
     background-color: white;
     margin: auto;
+    margin-top: 1rem;
 }
 
 .main-header .active {
@@ -70,6 +74,9 @@
 
     .main-header__bottom-divider {
         display: none;
+    }
+    .main-header {
+        padding-bottom: 1rem;
     }
 
 }
